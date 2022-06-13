@@ -10,8 +10,8 @@ return [
 	],
 
 	'migrations_paths' => [
-		'Alura\\Doctrine\\Migrations' => '/data/doctrine/migrations/lib/MyProject/Migrations',
-		'Alura\\Doctrine\\Migrations' => './Component/MyProject/Migrations',
+		'Alura\\Doctrine\\Migrations' => './src/Migrations',
+		'Alura\\Doctrine\\Component\\Migrations' => './src/Migrations/Component',
 	],
 
 	'all_or_nothing' => true,
