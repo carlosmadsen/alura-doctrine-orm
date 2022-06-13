@@ -7,7 +7,6 @@ Ter instalado o composer e o PHP com com extensão do pdo_sqlite habilitada.
 No terminal dentro da pasta do projeto: 
 ```
 composer install
-composer require doctrine/migrations:* --with-all-dependencies
 composer dumpautoload
 mkdir var 
 mkdir var/data

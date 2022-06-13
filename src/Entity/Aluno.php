@@ -1,9 +1,9 @@
 <?php
 
 namespace Alura\Doctrine\Entity;
-use Alura\Doctrine\Common\Collections\ArrayCollection;
-use Alura\Doctrine\Common\Collections\Collection;
-use Alura\Doctrine\Entity\Telefone;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Entity\Telefone;
 
 /**
  * @Entity
