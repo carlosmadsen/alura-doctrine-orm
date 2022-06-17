@@ -4,6 +4,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Alura\Doctrine\Entity\Aluno;
 use Alura\Doctrine\Entity\Telefone;
+use Alura\Doctrine\Entity\Curso;
 use Alura\Doctrine\Helper\EntityManagerFactory;
 
 $dados = [
@@ -52,6 +53,10 @@ $dados = [
 try {
 	$entityManagerFactory  = new EntityManagerFactory();
 	$entityManager  = $entityManagerFactory->getEntityManager();
+
+	$curso = new Curso();
+	$curso->setNome("Engenharia");
+
 	foreach ($dados as $d) {
 		$aluno = new Aluno();
 		$aluno->setNome($d['nome']);
@@ -62,6 +67,7 @@ try {
 				$aluno->addTelefone($telefone);
 			}
 		}
+		$aluno->addCurso($curso);
 		$entityManager->persist($aluno); 
 		$entityManager->flush(); 
 	}	

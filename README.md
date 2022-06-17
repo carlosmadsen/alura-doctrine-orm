@@ -12,6 +12,7 @@ cd alura-doctrine-orm
 composer install
 mkdir var 
 mkdir var/data
+mkdir src/Migrations/Component
 ```
 Criação do banco de dados sqlite (no windows).
 ```
