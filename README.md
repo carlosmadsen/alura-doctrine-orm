@@ -2,12 +2,14 @@
 ## Descrição do Projeto:
 Exercícios do curso de Doctrine ORM da Alura
 ## Requisitos:
-Ter instalado o composer e o PHP com com extensão do pdo_sqlite habilitada.
+Ter instalado o composer e o PHP (versão 7.3 ou superior) com com extensão do pdo_sqlite habilitada.
+No windows tem de descomentar (remover o ;) a linha "extension=pdo_sqlite" no arquivo php.ini.
 ## Instalação:
-No terminal dentro da pasta do projeto: 
+No terminal: 
 ```
+git clone https://github.com/carlosmadsen/alura-doctrine-orm.git
+cd alura-doctrine-orm
 composer install
-composer dumpautoload
 mkdir var 
 mkdir var/data
 ```
@@ -27,4 +29,10 @@ Listando todos alunos:
 ```
 php .\commands\buscar-alunos-all.php
 ```
+
+Ciando um aluno com telefone:
+```
+php .\commands\criar-aluno.php "Maria da Silva" "(53) 99148-5555"
+```
+
 Ver outros arquivos com exemplos e execícios na pasta **commands**. 

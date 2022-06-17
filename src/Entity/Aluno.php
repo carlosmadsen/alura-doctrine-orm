@@ -3,7 +3,7 @@
 namespace Alura\Doctrine\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\Entity\Telefone;
+use Alura\Doctrine\Entity\Telefone;
 
 /**
  * @Entity
@@ -20,8 +20,8 @@ class Aluno {
 	 */
 	private $nome;
 	/**
-	 * @OneToMany(targetEntity="Telefone", mappedBy="Aluno")
-	 */
+ 	* @OneToMany(targetEntity="Telefone", mappedBy="aluno", cascade={"remove", "persist"})
+ 	*/
 	private $telefones;
 
 	public function __construct() {
@@ -42,7 +42,8 @@ class Aluno {
 	}
 	
 	public function addTelefone(Telefone $telefone) {
-		$this->telefones->add($telefone);
+		$telefone->setAluno($this);
+		$this->telefones->add($telefone);		
 	}
 
 	public function getTelefones(): Collection {

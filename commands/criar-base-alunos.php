@@ -3,27 +3,65 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Alura\Doctrine\Entity\Aluno;
+use Alura\Doctrine\Entity\Telefone;
 use Alura\Doctrine\Helper\EntityManagerFactory;
 
-$nomes = [
-	'Carlos Alberto',
-	'Carlos Roberto',
-	'Carlos Eduardo',
-	'Fábio Pereira',
-	'Maria da Silva',
-	'José da Silva',
-	'Denise Silveira',
-	'Thais Cruz',
-	'Adroaldo Silveira',
-	'Érica Barros'
+$dados = [
+	[
+		'nome' => 'Carlos Alberto',
+		'telefones' => ['(53) 99148-6996', '(53) 3233-6599']
+	],
+	[
+		'nome' => 'Carlos Roberto',
+		'telefones' => ['(53) 991485599']
+	],
+	[
+		'nome' => 'Carlos Eduardo',
+		'telefones' => []
+	],
+	[
+		'nome' => 'Fábio Pereira',
+		'telefones' => []
+	],
+	[
+		'nome' => 'Maria da Silva',
+		'telefones' => []
+	],
+	[
+		'nome' => 'José da Silva',
+		'telefones' => []
+	],
+	[
+		'nome' => 'Denise Silveira',
+		'telefones' => []
+	],
+	[
+		'nome' => 'Thais Cruz',
+		'telefones' => ['(53) 3235-6699']
+	],
+	[
+		'nome' => 'Adroaldo Silveira',
+		'telefones' => []
+	],
+	[
+		'nome' => 'Érica Barros',
+		'telefones' => []
+	]
 ];
 
 try {
 	$entityManagerFactory  = new EntityManagerFactory();
 	$entityManager  = $entityManagerFactory->getEntityManager();
-	foreach ($nomes as $nome) {
+	foreach ($dados as $d) {
 		$aluno = new Aluno();
-		$aluno->setNome($nome);
+		$aluno->setNome($d['nome']);
+		if (!empty($d['telefones'])) {
+			foreach ($d['telefones'] as $numeroTelefone) {
+				$telefone = new Telefone();
+				$telefone->setNumero($numeroTelefone);
+				$aluno->addTelefone($telefone);
+			}
+		}
 		$entityManager->persist($aluno); 
 		$entityManager->flush(); 
 	}	

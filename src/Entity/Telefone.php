@@ -4,7 +4,7 @@ namespace Alura\Doctrine\Entity;
 use Alura\Doctrine\Entity\Aluno;
 
 /**
- *@Entity
+ * @Entity
  */
 class Telefone {
 	/**
