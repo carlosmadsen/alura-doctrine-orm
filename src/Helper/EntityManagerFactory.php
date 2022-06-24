@@ -14,11 +14,30 @@ class EntityManagerFactory {
 			[$rootDir . '/src'],
 			true
 		);
+		//sqlite 
 		$connection = [
 			'driver' => 'pdo_sqlite',
 			'path' => $rootDir . '/var/data/banco.sqlite'
 		];
-		return EntityManager::create($connection, $config);
+		//postgresql 
+		/*$connection = [
+			'driver' => 'pdo_pgsql',
+			'host' => 'localhost',
+			'port' => '5432',
+			'database' => 'banco',
+			'user' => 'usuario',
+			'password' => 'senha'
+		];*/
+		//mysql 		
+		/*$connection = [
+			'driver' => 'pdo_mysql',
+			'host' => 'localhost',
+			'dbname' => 'curso_doctrine',
+			'user' => 'root',
+			'password' => 'senhalura'
+		];*/
+		$em = EntityManager::create($connection, $config);
+		return $em;
 	}
 
 }

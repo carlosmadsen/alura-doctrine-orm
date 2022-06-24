@@ -5,9 +5,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Alura\Doctrine\Entity\Telefone;
 use Alura\Doctrine\Entity\Curso;
+use Alura\Doctrine\Repository\AlunoRepository; 
 
 /**
- * @Entity
+ * @Entity(repositoryClass="Alura\Doctrine\Repository\AlunoRepository")
  */
 class Aluno {
 	/**
