@@ -14,9 +14,9 @@ mkdir var
 mkdir var/data
 mkdir src/Migrations/Component
 ```
-Criação do banco de dados sqlite (no windows).
+Criação do banco de dados sqlite.
 ```
-.\vendor\bin\doctrine.bat orm:schema-tool:create
+php .\commands\doctrine.php orm:schema-tool:create
 ```
 ## Exemplo de uso:
 No terminal dentro da pasta do projeto: 
