@@ -36,4 +36,4 @@ Ciando um aluno com telefone:
 php .\commands\criar-aluno.php "Maria da Silva" "(53) 99148-5555"
 ```
 
-Ver outros arquivos com exemplos e execícios na pasta **commands**. 
+Ver outros arquivos com exemplos e execícios na pasta commands (alterado). 
